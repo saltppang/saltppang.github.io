@@ -1,0 +1,203 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css");
+@import url("https://websfont.github.io/gmarket/gmarket.css");
+.mont {
+  font-family: "Montserrat";
+}
+
+.nanum {
+  font-family: "nanumSquareNeo";
+}
+
+.gmarket {
+  font-family: "gmarket";
+}
+
+@font-face {
+  font-family: 'MaruBuri';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'MaruBuriSemiBold';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'MaruBuriBold';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'MaruBuriLight';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'MaruBuriExtraLight';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NeueHaasGroteskDisp';
+  font-weight: 400;
+  src: url(../fonts/NHaasGroteskDSPro-55Rg.woff2) format("woff2"), url(../fonts/NHaasGroteskDSPro-55Rg.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTSuperDisplay';
+  src: url(../fonts/GT-Super-Display-Light.woff2) format("woff2"), url(../fonts/GT-Super-Display-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTSuperDisplayMedium';
+  src: url(../fonts/GT-Super-Display-Bold.woff2) format("woff2"), url(../fonts/GT-Super-Display-Bold.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --mainEng-font: "GTSuperDisplay";
+  --mainEng-font-bold: "GTSuperDisplayMedium";
+  --subEng-font: "NeueHaasGroteskDisp";
+  --mainKor-font: "MaruBuri";
+  --mainNum-font: "GTSuperDisplay";
+  --mainBg-color: #fff;
+  --siteBg1: #eceff1;
+  --siteBg2: #cfd8dc;
+  --siteBg3: #b0bec5;
+  --siteBg4: #90a4ae;
+  --siteBg5: #78909c;
+  --white: #fff;
+  --black: #000;
+  --black100: #2b2b2b;
+  --black200: #434343;
+  --black300: #686868;
+  --black400: #e0e0e0;
+  font-family: var(--mainEng-font), var(--mainKor-font);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+body {
+  background-color: var(--mainBg-color);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button,
+input,
+select,
+table,
+textarea {
+  font-family: var(--mainEng-font), var(--mainKor-font), "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+em,
+address {
+  font-size: normal;
+}
+
+strong {
+  font-weight: normal;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+#skip a {
+  position: absolute;
+  left: 10px;
+  top: -92px;
+  z-index: 10000;
+  font-size: 1rem;
+  padding: 10px 30px;
+  color: var(--white);
+  background: var(--black);
+}
+
+#skip a:focus,
+#skip a:active {
+  top: 10px;
+}
