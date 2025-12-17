@@ -18,7 +18,6 @@ function initScroll() {
 
   const portWrap = document.querySelector(".port__wrap");
   const portSection = document.querySelector("#port");
-  if (!portWrap || !portSection) return;
 
   const totalWidth = portWrap.scrollWidth - window.innerWidth;
 
@@ -164,6 +163,10 @@ onBeforeUnmount(() => {
                 flex-shrink: 0; // 크기 고정
                 padding: 0 2.5rem;
                 margin-right: 20px;
+                @media (max-width: 800px) {
+                    width: 490px;
+                    padding: 0 4rem;
+                }
                 .num {
                     font-size: 2rem;
                     font-family: var(--mainNum-font);

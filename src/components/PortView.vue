@@ -23,7 +23,7 @@ onMounted(() => {
   const width = window.innerWidth
   if (width <= 500) {
     slidesPerView.value = 3
-    spaceBetween.value = 10
+    spaceBetween.value = 5
   } else if (width <= 1024) {
     slidesPerView.value = 3
     spaceBetween.value = 80
@@ -70,11 +70,6 @@ const frameClass = computed(() =>
 <template>
   <section id="portView">
     <div class="port__inner">
-    <!-- <div v-if="portData">
-      <h5>{{ portData.title }}</h5>
-      <p>{{ portData.price }}</p>
-      <p>{{ portData.content }}</p>
-    </div> -->
       <div class="port__wrap">
         <div class="port__top">
           <div class="left">
@@ -118,15 +113,15 @@ const frameClass = computed(() =>
               :slides-per-view="'auto'"
               :centered-slides="true"
             >
-            <SwiperSlide v-for="(img, index) in portData.images" :key="index">
-                <div :class="pcIds.includes(id) ? 'screen-wrapper pc' : 'screen-wrapper mobile'" @wheel.stop @touchmove.stop>
-                   <img class="screen" :src="img" alt="slide image" />
+              <SwiperSlide v-for="(img, index) in portData.images" :key="index" :class="pcIds.includes(id) ? 'slide-pc' : 'slide-mobile'">
+                <div :class="[ 'screen-wrapper', pcIds.includes(id) ? 'pc' : 'mobile']" @wheel.stop @touchmove.stop>
+                  <img class="screen" :src="img" />
                 </div>
               </SwiperSlide>
-            </Swiper>
+
+            </Swiper> 
 
             <!-- 디바이스 프레임 -->
-            <!--<img class="phone-frame" src="../assets/img/Mockup_iphone.png" />-->
             <img :src="frameImg" :class="frameClass" alt="디바이스 목업" />
 
           </div>
@@ -150,11 +145,21 @@ const frameClass = computed(() =>
           
             .port__top {
               display:flex;
+              padding-top: 3rem;
               flex-flow: row wrap;
               justify-content: space-between;
               align-items: center;
+              @media (max-width: 800px) {
+                flex-flow: column;
+              }
               .left {
                 width: 50%;
+                @media (max-width: 800px) {
+                  width: 80%;
+                }
+                @media (max-width: 640px) {
+                  width: 100%;
+                }
                 .imac {
                   position: relative;
                   width: 100%;
@@ -188,16 +193,30 @@ const frameClass = computed(() =>
               }
               .right {
                 width: calc(100% - 52%);
+                @media (max-width: 800px) {
+                  width: 70%;
+                  padding-top: 3rem;
+                }
+                @media (max-width: 640px) {
+                  width: 90%;
+                }
                 dl {
                   display: flex;
                   flex-flow: wrap;
-                  font-size: 1.1vw;
+                  font-size: 0.8rem;
                   line-height: 1.6;
+                  @media (max-width: 800px) {
+                    font-size: 0.9rem;
+                    word-break: keep-all;
+                  }
                   dt {
                     width: 9rem;
                     font-family: var(--mainEng-font-bold);
                     @media (max-width: 1200px) {
                          width: 7rem;
+                    }
+                    @media (max-width: 800px) {
+                         width: 9rem;
                     }
                   }
                   dd {
@@ -214,8 +233,10 @@ const frameClass = computed(() =>
             }
 
             .port__bottom {
-              margin-top:10vh;
-
+              margin-top:7rem;
+              @media (max-width: 800px) {
+                  margin-top: 3rem;
+                }
               .phone-carousel {
                  position:relative;
                 // width:28vw;
@@ -230,12 +251,6 @@ const frameClass = computed(() =>
                     opacity: 1;
                     transform: none;
                 }
-                /*.swiper-slide, .phone-frame {
-                      width: clamp(280px, 30vw, 360px); /* 반응형 슬라이드 
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                }*/
                 .swiper-slide {
                   transform: scale(0.7);
                   opacity: 0.6;
@@ -258,6 +273,28 @@ const frameClass = computed(() =>
                   width: 19rem;
                   justify-content: center;
                   align-items: center;
+                  &.slide-pc {
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    aspect-ratio: 14.5 / 11;
+                    z-index: 10;
+                    pointer-events: none;
+                    .pc {
+                      width: 95%;
+                      aspect-ratio: 14.5 / 11;
+                      margin-top: 0;
+                      box-shadow: none;
+                    }
+                  }
+                }
+
+                .swiper-slide-active {
+                  .screen-wrapper {
+                    &.mobile {
+                      border-radius: 0 0 10px 10px;
+                    }
+                  }
                 }
 
                 .screen-wrapper {
@@ -268,9 +305,9 @@ const frameClass = computed(() =>
                   position: relative;
                   margin-top:5vh;
                   background: #fff;
-                  box-shadow: 0 0 0 1px #ddd;
-                  &.pc {
-                    box-shadow: none;
+                  
+                  &.mobile {
+                    box-shadow: 0 0 0 1px #ddd;
                   }
                 }
 
@@ -334,14 +371,6 @@ const frameClass = computed(() =>
 
               }
 
-              /* @media only screen and (max-width:500px) {
-                .swiper-container {
-                  max-width:160%;
-                  width:160%;
-                  margin-left:-30%;
-                }
-                
-              }*/
             }
           }
         }
