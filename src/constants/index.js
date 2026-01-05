@@ -605,4 +605,7 @@ export const contactInfo = [
     {
         text: "스크롤 했을 때 인터랙티브한 느낌을 주고 싶어 GSAP을 사용하였습니다.",
     },
+    {
+        text: "Environment - Vue 3 - Vite - Node.js 24.x - npm",
+    }
 ];

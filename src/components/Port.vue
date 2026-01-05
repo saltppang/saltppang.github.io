@@ -16,6 +16,10 @@ function initScroll() {
     portTrigger = null;
   }
 
+  if (window.innerWidth < 800) {
+    return;
+  }
+
   const portWrap = document.querySelector(".port__wrap");
   const portSection = document.querySelector("#port");
 
@@ -87,7 +91,10 @@ onBeforeUnmount(() => {
         overflow: hidden;
         width: 100%;
         margin-top: 30vh;
-        //border: 2px dashed black;
+        @media (max-width: 800px) {
+            overflow: visible;
+            margin-top: 10vh;
+        }
     }
     .port__inner {
         padding: 16px;
@@ -110,9 +117,14 @@ onBeforeUnmount(() => {
             border-bottom: 0.3vw solid var(--black100);
             letter-spacing: -0.06vw;
             @media (max-width: 800px){ 
-                margin-bottom: 2vw;
+                position: sticky;
+                width: 100%;
                 height: auto;
+                top: 68px;
+                margin-bottom: 2vw;
                 font-size: 1.5rem;
+                background-color: var(--white);
+                z-index: 1;
             }
 
             a {
@@ -155,6 +167,10 @@ onBeforeUnmount(() => {
             overflow-x: visible; // 가로 스크롤 애니메이션을 위해 가로 오버플로 허용
             margin: 0; // 불필요한 여백 제거
             //border:1px solid red;
+            @media (max-width: 800px) {
+                flex-direction: column;
+                transform: none !important; // GSAP 잔여값 방지
+            }
 
             .port__item {
                 display:flex;
@@ -164,8 +180,9 @@ onBeforeUnmount(() => {
                 padding: 0 2.5rem;
                 margin-right: 20px;
                 @media (max-width: 800px) {
-                    width: 490px;
-                    padding: 0 4rem;
+                    width: 90%;
+                    padding: 0;
+                    margin: 0 auto 3rem auto;
                 }
                 .num {
                     font-size: 2rem;

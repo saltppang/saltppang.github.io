@@ -1,3 +1,10 @@
+/**
+ * Intro Section
+ * - PC: ScrollTrigger + 가로 스크롤
+ * - Mobile: 일반 세로 스크롤
+ * - Resize 시 ScrollTrigger 중복 생성 방지
+ */
+ 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import gsap from "gsap";
@@ -13,24 +20,36 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-  console.log("intro onMounted 호출됨");
+  //console.log("intro onMounted 호출됨");
   initScrollAnimation();
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
+  killIntroTriggers();
   // intro 전용 트리거만 제거
-  ScrollTrigger.getAll().forEach(st => {
+  /*ScrollTrigger.getAll().forEach(st => {
     if (!st.vars.id || st.vars.id.startsWith("Intro")) return;
     st.kill();
-  });
+  });*/
 });
+
+// kill 함수 만들기 (중복제거)
+const killIntroTriggers = () => {
+  ScrollTrigger.getAll().forEach(st => {
+    if(st.vars.id && st.vars.id.startsWith("Intro")) {
+      st.kill();
+    }
+  });
+};
 
 // intro 가로 스크롤 & 패럴랙스
 const initScrollAnimation = () => {
+  killIntroTriggers(); 
+
   ScrollTrigger.matchMedia({
     "(min-width: 801px)": function () {
-      console.log("pc 가로스크롤 실행");
+      //console.log("pc 가로스크롤 실행");
       const horSection = gsap.utils.toArray(".intro__item");
       const container = document.querySelector("#intro");
 
@@ -51,8 +70,7 @@ const initScrollAnimation = () => {
       });
     },
     "(max-width: 800px)": function () {
-      console.log("모바일 세로스크롤 실행");
-      // 모바일에서는 별도 애니메이션 없음
+      //console.log("모바일 세로스크롤 실행");
     },
   });
 
