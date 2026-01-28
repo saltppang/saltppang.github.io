@@ -176,7 +176,6 @@
                 padding: 2rem 1rem;
                 font-family: 'MaruBuriBold';
                 font-size:1rem;
-                background: url(../../img/arrow.svg) no-repeat right 20px;
             }
             .desc {
                 font-size: 0.8rem;
