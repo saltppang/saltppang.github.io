@@ -43,11 +43,19 @@ function initScroll() {
 
 onMounted(() => {
   nextTick(() => {
-    initScroll();
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        initScroll();
+        ScrollTrigger.refresh();
+      }, 100);
+    });
+
     resizeHandler = () => {
       if (portTrigger) portTrigger.kill();
       initScroll();
+      ScrollTrigger.refresh();
     };
+
     window.addEventListener("resize", resizeHandler, { passive: true });
   });
 });
