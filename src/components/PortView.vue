@@ -48,9 +48,9 @@ const route = useRoute()
 const id = parseInt(route.params.id)
 const portData = portView[id]
 
-console.log("📌 route.params.id =", route.params.id)
-console.log("📌 id =", id)
-console.log("📌 portData =", portData)
+//console.log("📌 route.params.id =", route.params.id)
+//console.log("📌 id =", id)
+//console.log("📌 portData =", portData)
 
 // 특정 ID만 PC 목업으로 보여주기
 const pcIds = [3] // 관리 배열
@@ -287,6 +287,9 @@ const frameClass = computed(() =>
                       box-shadow: none;
                     }
                   }
+                  @media (max-width: 800px) {
+                    width: 16rem;
+                  }
                 }
 
                 .swiper-slide-active {
@@ -305,9 +308,11 @@ const frameClass = computed(() =>
                   position: relative;
                   margin-top:5vh;
                   background: #fff;
-                  
                   &.mobile {
                     box-shadow: 0 0 0 1px #ddd;
+                  }
+                  @media (max-width: 800px) {
+                    aspect-ratio: 9 / 18.1;
                   }
                 }
 
@@ -330,10 +335,13 @@ const frameClass = computed(() =>
                   position: absolute;
                   top: 0;
                   left: 50%; 
-                  width: 19rem;
+                  width: 18.9rem;
                   transform: translate(-50%, 0);
                   z-index: 10;
                   pointer-events: none;
+                  @media (max-width: 800px) {
+                    width: 16rem;
+                  }
                 }
 
                 /* PC 프레임 오버레이 */
