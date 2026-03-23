@@ -172,6 +172,9 @@ const initScrollAnimation = () => {
           <p class="people">-Albert Einstein</p>
         </div>
         <div class="intro__item intro__lines">
+          <div class="item mo" data-x="200">
+            <span class="greetings">Hello</span>
+          </div>
           <div class="item one" data-x="-300"><span>I </span><span> </span><span>a</span><span>m</span> </div> 
           <div class="item two" data-x="200">
             <span class="greetings">Hello</span>
@@ -303,20 +306,32 @@ const initScrollAnimation = () => {
         display: inline-block; width: 200vh; 
         line-height:1; 
         @media (max-width: 800px) {
-          padding-top:20vh;
+          padding-top:30vh;
           width: 100%;
         } 
         
         .item { 
           position:relative;
           text-align:center;
+          &.mo {
+            display: none;
+          }
           @media (max-width: 800px) {
+            &.mo {
+              display: inline;
+              top: 0;
+              left:50%;
+              transform: translate(-50%);
+            }
             &.one {
               margin-left: 7rem;
             }
             &.two {
               margin-left: 1rem;
               width: 88%;
+              .greetings {
+                display: none;
+              }
             }
             &.three {
               margin-left: 2rem;
@@ -334,18 +349,12 @@ const initScrollAnimation = () => {
             font-size: 7vh; 
             letter-spacing: 0.5rem;
             @media (max-width: 800px) {
-              top: -29vh;
+              top: -15vh;
               left: 50%;
               transform: translate(-50%);
               letter-spacing: 0.2rem;
               font-size: 8vw;
-            }  
-             @media (max-width: 640px) {
-              top: -26vh;
-            }  
-             @media (max-width: 480px) {
-              top: -24vh;
-            }
+            } 
           }
           span { 
             text-transform: uppercase; 

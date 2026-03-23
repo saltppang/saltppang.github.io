@@ -155,7 +155,9 @@ export default {
             @include flex-center;
             justify-content: flex-start;
             position: sticky;
-
+            @media (max-height: 550px){ 
+                height: 130vh;
+            }
             &:nth-child(1) {
                 background-color: var(--siteBg1);
                 top: 140px;

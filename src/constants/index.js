@@ -430,8 +430,7 @@ export const portView = [
         images: [
             new URL('../assets/img/11.vomissam_sub1.png', import.meta.url).href,
             new URL('../assets/img/11.vomissam_sub2.png', import.meta.url).href,
-            new URL('../assets/img/11.vomissam_sub3.png', import.meta.url).href,
-            new URL('../assets/img/11.vomissam_sub4.png', import.meta.url).href
+            new URL('../assets/img/11.vomissam_sub3.png', import.meta.url).href
         ]
     },
     {
@@ -486,8 +485,8 @@ export const portView = [
         ],
         images: [
             new URL('../assets/img/13.ggyouth_sub1.jpg', import.meta.url).href,
-            new URL('../assets/img/13.ggyouth_sub2.jpg', import.meta.url).href,
-            new URL('../assets/img/13.ggyouth_sub3.jpg', import.meta.url).href,
+            new URL('../assets/img/13.ggyouth_sub2.png', import.meta.url).href,
+            new URL('../assets/img/13.ggyouth_sub3.png', import.meta.url).href,
             new URL('../assets/img/13.ggyouth_sub4.jpg', import.meta.url).href
         ]
     },
