@@ -318,10 +318,8 @@ const initScrollAnimation = () => {
           }
           @media (max-width: 800px) {
             &.mo {
-              display: inline;
+              display: block;
               top: 0;
-              left:50%;
-              transform: translate(-50%);
             }
             &.one {
               margin-left: 7rem;
